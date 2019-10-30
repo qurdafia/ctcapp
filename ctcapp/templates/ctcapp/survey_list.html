@@ -1,0 +1,6 @@
+<h4>Survey List</h4>
+<ul>
+    {% for survey in survey_list %}
+        <li><a href="{% url 'survey' pk=survey.pk %}">{{ survey }}</a></li>
+    {% endfor %}
+</ul>
