@@ -1,11 +1,17 @@
-<h4>Survey Detail</h4>
-
+{% extends "ctcapp/survey_welcome.html" %}
 {% block content %}
+<h4>Survey Detail</h4>
+<p></p>
     <div>
-        <p>{{ survey.first_name }}</p>
-        <p>{{ survey.last_name }}</p>
-        <p>{{ survey.email }}</p>
-        <p>{{ survey.comment }}</p>
-        <p>{{ survey.submitted }}</p>
+        <p><strong>Submitted by:</strong> {{ survey.first_name }}&nbsp;{{ survey.last_name }}<br />
+            <strong>Email:</strong> {{ survey.email }}
+        </p>
+        <p>{{ survey.first_name }} says -- <strong>"{{ survey.comment }}"</strong></p>
+        <p><strong>Date:</strong>
+            {% if "None" %}
+                <span>Not specified.</span>
+            {% else %}
+                {{ survey.submitted }}</p>
+            {% endif %}
     </div>
 {% endblock %}

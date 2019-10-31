@@ -3,6 +3,10 @@ from .forms import SurveyModelForm
 from .models import Survey
 
 
+def welcome(request):
+    return render(request, 'ctcapp/survey_welcome.html', {'welcome': welcome})
+
+
 def surveys(request):
     survey_list = Survey.objects.all()
     return render(request, 'ctcapp/survey_list.html', {'survey_list': survey_list})
