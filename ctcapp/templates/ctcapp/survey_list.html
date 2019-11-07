@@ -1,9 +1,12 @@
 {% extends "ctcapp/survey_welcome.html" %}
 {% block content %}
-<h4>Survey List</h4>
-<ul>
-    {% for survey in survey_list %}
-        <li><a href="{% url 'survey' pk=survey.pk %}">{{ survey }}</a></li>
-    {% endfor %}
-</ul>
+<h4>Survey Responses List</h4>
+
+{% for survey in survey_list %}
+    <div class="ctc-cards">
+        "{{ survey.comment }}"<br /><br />
+        by <a href="{% url 'survey' pk=survey.pk %}">{{ survey.first_name }}</a>
+    </div>
+{% endfor %}
+
 {% endblock %}

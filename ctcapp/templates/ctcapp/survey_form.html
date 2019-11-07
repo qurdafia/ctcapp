@@ -1,6 +1,7 @@
 {% extends "ctcapp/survey_welcome.html" %}
 {% block content %}
 <h4>Sample Survey Form</h4>
+<p>Kindly write your comment about RedHat OpenShift and fill up the other fields.</p>
 <form method="POST">{% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="save btn btn-default">Save</button>
