@@ -8,7 +8,7 @@ def welcome(request):
 
 
 def surveys(request):
-    survey_list = Survey.objects.all()
+    survey_list = Survey.objects.all().order_by('submitted')
     return render(request, 'ctcapp/survey_list.html', {'survey_list': survey_list})
 
 
