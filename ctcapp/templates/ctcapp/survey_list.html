@@ -5,7 +5,7 @@
 {% for survey in survey_list %}
     <div class="ctc-cards">
         "{{ survey.comment | truncatechars:30 }}"<br /><br />
-        by <a href="{% url 'survey' pk=survey.pk %}">{{ survey.first_name }}</a>
+        by <a href="{% url 'survey' pk=survey.pk %}">{{ survey.first_name | truncatechars:20 }}</a>
     </div>
 {% endfor %}
 
